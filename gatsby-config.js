@@ -4,13 +4,16 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitle: 'Austin Sharman',
+    siteTitleAlt: `Austin Sharman's Digital Garden`,
+    author: 'Austin Sharman'
   },
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
       options: {
+        formatString: 'MM.DD.YYYY',
         navigation: [
           {
             title: `Blog`,
@@ -24,11 +27,11 @@ module.exports = {
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
+            url: `https://twitter.com/sharman_austin`,
           },
           {
-            name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
+            name: `LinkedIn`,
+            url: `https://www.linkedin.com/in/austin-sharman/`,
           },
         ],
       },
@@ -43,9 +46,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `Austin Sharman`,
+        short_name: `austinsharman.com`,
+        description: `Austin Sharman's digital garden`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
