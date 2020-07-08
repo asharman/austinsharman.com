@@ -6,7 +6,8 @@ module.exports = {
   siteMetadata: {
     siteTitle: 'Austin Sharman',
     siteTitleAlt: `Austin Sharman's Personal Site`,
-    author: 'Austin Sharman'
+    author: 'Austin Sharman',
+    siteImage: '/banner.jpg'
   },
   plugins: [
     {
