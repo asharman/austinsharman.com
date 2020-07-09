@@ -6,8 +6,11 @@ module.exports = {
   siteMetadata: {
     siteTitle: 'Austin Sharman',
     siteTitleAlt: `Austin Sharman's Personal Site`,
+    siteDescription: `Posts that explore writing software for the web, learning, and teaching among other things`,
     author: 'Austin Sharman',
-    siteImage: '/banner.jpg'
+    siteImage: '/banner.jpg',
+    siteUrl: 'https://austinsharman.com',
+    siteLanguage: 'en',
   },
   plugins: [
     {
@@ -49,7 +52,7 @@ module.exports = {
       options: {
         name: `Austin Sharman`,
         short_name: `austinsharman.com`,
-        description: `Austin Sharman's digital garden`,
+        description: `Posts that explore writing software for the web, learning, and teaching among other things`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
