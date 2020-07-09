@@ -183,7 +183,7 @@ While executing blockForOneSec the timer finishes and pushes sayHello into the C
 
 Approximately 900ms later blockForOneSec finishes and is popped off the Call Stack. 
 
-Now the Event Loop is still checking the Call Stack and there aren't any functions on it at this exact moment in time, but it is still not empty. The initial execution context is still there. Without going into the weeds, the execution context the environment where we execute the functions.
+Now the Event Loop is still checking the Call Stack and there aren't any functions on it at this exact moment in time, but it is still not empty. The initial execution context is still there. Without going into the weeds, the execution context is the environment where we execute the functions.
 
 In short all of the synchronous code will be executed before any asynchronous callback is called.
 
