@@ -1,0 +1,31 @@
+---
+title: 'Responsive Design'
+date: 2020-08-18
+slug: '/responsive-design'
+---
+
+When first learning about responsive design and CSS I was taught that we use Media Queries to create breakpoints in the design. Designers would give you 2 or more designs for various screen widths and you would style each layout a little differently. Maybe on mobile you'd start with a single column layout then as the screen became larger and the design started to "break" you'd add a media query to change the layout to multi-column.
+
+The same could be for sizing elements like typefaces and spacing.
+
+In practice what I often found is that the designs looked great at exactly each of these breakpoints, maybe 320px and 1440px, but when viewing the website on any other size screen everything seemed slightly _off_. The goal of the web and responsive design is so that your content can be viewed on any device, not just ones that are your arbitrary breakpoints.
+
+Another drawback of focusing too much on breakpoints is this jarring difference in design between browser widths that are just 1px apart. To me this feels unatural and not what I'd expect when I hear the words responsive.
+
+Often times by the end of a project I'd have so many different media queries set up in my project trying to fix small inconsistencies for slightly different screen sizes, this quickly becomes bloated and hard to manage CSS and we start to enter the "I'm afraid to touch anything because it will break something" territory.
+
+The problem with all of these media queries is that we are telling the browser rendering engine exactly what we want at every step of the way. The rendering engine has a very systematic way in which it renders content and we remove that by specifying all of these rules.
+
+Instead I think we should be writing less rules, but thinking about how the browser will use these rules at all screen sizes.
+
+Instead of manually placing everything on our websites we should be crafting flexible rules that the browser can use to create the layouts we want.
+
+I've been exploring this space recently and how we can implement some of this in our websites. Stay tuned for more.
+
+In the meantime here are some great resources that I've come across that you can view:
+
+[Intrinsic Web Design - Jen Simmons](https://www.youtube.com/watch?v=jBwBACbRuGY)
+
+[Every Layout - Heydon Pickering & Andy Bell](https://every-layout.dev/)
+
+[Utopia - James Gilyead & Trys Mudford](https://utopia.fyi/)
