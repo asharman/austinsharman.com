@@ -1,0 +1,34 @@
+---
+title: "Initial thoughts on Phoenix LiveView"
+date: 2022-03-12
+slug: "/phoenix-liveview"
+---
+
+I recently finshed a project built using Phoenix Liveview. It was a multiplayer board game that was able to manage multiple game lobbies. While Liveview made managing multiple clients connected to a single server process trivial. Some parts were not. This post is an attempt to document my findings.
+
+## Managing Sessions
+
+Phoenix (the framework) provides a nice way to deal with client sessions stored through cookies using Plug.
+
+Every Phoenix request accepts a `conn` struct. This comes with the `Plug` library.
+
+Reading and modifying the session through this `conn` struct is as simple as calling some functions:
+
+```elixir
+    conn = put_session(conn, :message, "new stuff we just set in the session")
+    message = get_session(conn, :message)
+```
+
+We can do this in any Phoenix Controller.
+
+This is great for storing data specific to a particular user in their browser.
+
+I wanted to store sessions for players in my board game so that they could be reconnected to a game in case they refreshed the page.
+
+However I discovered that LiveView components don't have access to the `conn` struct, but instead a single `socket`. This makes sense because Liveview works over websockets and not standard HTTP requests.
+
+Setting cookies through websockets isn't
+
+This means I wasn't able to store data that my LiveView component received from the user or the server into the session.
+
+The

@@ -1,0 +1,67 @@
+# Implementing an Elixir GenServer
+
+## What is an Elixir GenServer?
+
+### What does it do?
+
+### How does this solve concurrency issues
+
+### How do we use it?
+
+### How does it work?
+
+## Elixir Processes
+
+### All work done by Elixir is done in a process
+
+### Using spawn to create a process
+
+### Using self() to retrieve the current process
+
+### Sending and receiving messages to processes
+
+### Using pattern matching to receive different messages easily
+
+### Using recursion to listen to multiple messages
+
+### Keeping state inside of a process with the loop function
+
+## Creating a counter server
+
+### Everything will be tucked away in a module and abstracts over the server implementation details
+
+### We need to start the server, send messages to recieve state, send messages to modify the state.
+
+### We can pass it the initial state
+
+### Wrap our sending functions in Interface functions for the client to use
+
+### Implement casting the new state when incrementing / decrementing
+
+## Creating a generic server
+
+### Identify the separation of concerns (What is strictly the counter's details vs the server's)
+
+### The server is concerned with sending requests and accepting responses, implementing a loop and managing the state across each function call
+
+### The counter is concerned with reading a number, incrementing / decrementing that number
+
+## Abstracting the server into its own module
+
+### Handling any Module (atom names)
+
+### Creating callbacks for the server to use
+
+#### init() -> initial_state // starts the server and gives it its initial state
+
+#### handle_call({:message, data}, currentState) -> {:reply, response, new_state}
+
+#### handle_cast({:message, data}, currentState) -> {:noreply, new_state}
+
+### Creating interface functions for the client
+
+#### GenServer.start -> pid and starts the loop
+
+#### GenServer.call(pid, {:message, data}) -> {:ok, data}
+
+#### GenServer.cast(pid, {:message, data})
